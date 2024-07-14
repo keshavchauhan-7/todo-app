@@ -24,7 +24,8 @@ const Todo = () => {
             {/* -----todo list----- */}
 
             <div>
-                <TodoItems />
+                <TodoItems text="Learn Coading" />
+                <TodoItems text="Learn Coading from Youtube" />
             </div>
 
 
