@@ -5,18 +5,18 @@ import delete_icon from '../assets/delete.png'
 
 
 
-const TodoItems = ({text, id, isComplete}) => {
+const TodoItems = ({ text, id, isComplete, deleteTodo, toggle }) => {
   return (
-    <div className='flex ite my-3 gap-2'>
+    <div onClick={() => { toggle(id) }} className='flex ite my-3 gap-2'>
       <div className='flex flex-1 items-center cursor-pointer'>
-        <img src={tick} alt="" className='w-7' />
-        <p className='text-slate-700 ml-4 text-[17px]'>
+        <img src={isComplete ? tick : not_tick} alt="" className='w-7' />
+        <p className={`text-slate-700 ml-4 text-[17px] ${isComplete? 'line-through' :''}`}>
           {text}
         </p>
       </div>
 
-      <img src={delete_icon} alt="" className='w-[25px] cursor-pointer' />
-    </div>
+      <img onClick={() => { deleteTodo(id) }} src={delete_icon} alt="" className='w-[25px] cursor-pointer' />
+    </div >
   )
 }
 
